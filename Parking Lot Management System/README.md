@@ -35,4 +35,8 @@ The parking lot system will be used to manage vehicle parking across multiple fl
 - The system should manage parking spots across multiple floors, allowing users to park on any available floor.
 - Floor-specific features might include reserved spots for electric vehicles, handicapped spaces, and charging stations.
 
-SOLUTION: https://codemia.io/object-oriented-design/design-a-parking-lot/solutions/sj1jx5/My-Solution-for-Design-a-Parking-Lot-with-Score-910
+SOLUTION: 
+
+- https://codemia.io/object-oriented-design/design-a-parking-lot/solutions/sj1jx5/My-Solution-for-Design-a-Parking-Lot-with-Score-910
+
+- https://github.com/eMahtab/design-a-parking-lot
