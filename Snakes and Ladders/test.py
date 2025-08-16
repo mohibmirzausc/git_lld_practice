@@ -5,6 +5,7 @@ from snake import Snake
 from ladder import Ladder
 from board import Board
 from game import Game
+from player import Player
 
 class TestSuite(unittest.TestCase):
     def setUp(self):
@@ -30,12 +31,21 @@ class TestSuite(unittest.TestCase):
         self.assertEqual(board.snakes_and_ladders[3], 1)
         self.assertEqual(board.snakes_and_ladders[1], 5)
 
+        player1 = Player("Tom")
+        player2 = Player("Jill")
+
         dice = Dice(1,6)
 
         builder = Game.Builder()
 
-        builder.set_board(board)
+        builder.set_board(5, [snake, ladder])
         builder.set_dice(dice)
+        builder.set_players([player1, player2])
+
+        game = Game(builder)
+
+        game.play()
+
 
         
 

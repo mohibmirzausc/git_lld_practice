@@ -30,3 +30,28 @@ class Game:
         self.board = builder.board
         self.players = builder.players
         self.dice = builder.dice
+        self.turn = 1
+
+    def take_turn(self): # if returns true then that means that player won
+
+        player = self.players[self.turn % len(self.players)]
+
+        roll = self.dice.roll()
+
+        print(f"{player.get_name()} rolls a {roll}!")
+
+        new_pos = self.board.get_final_position(roll + player.get_pos())
+        player.set_pos(new_pos)
+
+        if new_pos >= self.board.getSize():
+            print("Winner is ", player.get_name())
+            return True
+        
+        self.turn += 1
+        return False   
+
+    def play(self):
+        while not self.take_turn():
+            continue
+
+    
