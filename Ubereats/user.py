@@ -19,15 +19,15 @@ class User(ABC):
         self.messages.append(msg)
 
 class Customer(User):
-    def __init__(self, id: str, status: UserType) -> None:
-        super().__init__(id, status)
+    def __init__(self, id: str) -> None:
+        super().__init__(id, UserType.CUSTOMER)
         self.past_orders: List['Order'] = []
 
 
     
 class Driver(User):
-    def __init__(self, id: str, status: UserType) -> None:
-        super().__init__(id, status)
+    def __init__(self, id: str) -> None:
+        super().__init__(id, UserType.DRIVER)
         self.driver_status: DriverStatus = DriverStatus.AWAITING_ORDER
 
     def set_driver_status(self, driver_status: DriverStatus):
