@@ -2,6 +2,7 @@ import unittest
 from restaurant import Restaurant, RestaurantBuilder
 from order import Order, OrderBuilder
 from user import User, Customer, Driver
+from service import Service
 
 class TestSuite(unittest.TestCase):
     def setUp(self):
@@ -36,6 +37,26 @@ class TestSuite(unittest.TestCase):
         order = order_builder.build()
 
         self.assertTrue(order.customer, sarah)
+
+        self.assertEqual(order.driver, None)
+    
+    def test_service(self):
+        service = Service()
+
+        mo = Driver("Mo")
+
+
+        service.add_user(mo)
+
+        self.assertEqual(len(service.drivers), 1)
+
+        sarah = Customer("Sarah")
+
+        service.add_user(sarah)
+
+        self.assertEqual(service.customers.get("Sarah"), sarah)
+        
+        
 
 
 
